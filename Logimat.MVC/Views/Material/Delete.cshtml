@@ -1,0 +1,33 @@
+﻿@model Logimat.API.Models.Material
+
+@{
+    ViewData["Title"] = "Malzeme Silme";
+}
+
+<h2>Malzeme Silme</h2>
+
+<h3>Bu malzemeyi silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>@Model.Name</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Kodu:</dt>
+        <dd>@Model.Code</dd>
+
+        <dt>Adet:</dt>
+        <dd>@Model.Quantity</dd>
+
+        <dt>Açıklama:</dt>
+        <dd>@Model.Description</dd>
+
+        <dt>Fiyat:</dt>
+        <dd>@Model.Price</dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="id" value="@Model.Id" />
+        <button type="submit" class="btn btn-danger">Evet, Sil</button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">İptal</a>
+    </form>
+</div>

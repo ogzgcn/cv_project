@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Logimat.API.props" />
+</Project>

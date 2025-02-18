@@ -1,0 +1,17 @@
+﻿@model Logimat.API.Models.Material
+
+@{
+    ViewData["Title"] = "Malzeme Detayları";
+}
+
+<h2>Malzeme Detayları</h2>
+
+<table class="table">
+    <tr><th>Ad:</th><td>@Model.Name</td></tr>
+    <tr><th>Kodu:</th><td>@Model.Code</td></tr>
+    <tr><th>Adet:</th><td>@Model.Quantity</td></tr>
+    <tr><th>Açıklama:</th><td>@Model.Description</td></tr>
+    <tr><th>Fiyat:</th><td>@Model.Price.ToString("C")</td></tr>
+</table>
+
+<a href="@Url.Action("Index")" class="btn btn-secondary">Geri</a>
